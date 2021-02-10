@@ -1,0 +1,12 @@
+.column {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  border: 3px double black;
+  width: 400px;
+
+  h3 {
+    margin-left: 5px;
+  }
+}
