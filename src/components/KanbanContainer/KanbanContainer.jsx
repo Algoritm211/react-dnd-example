@@ -17,7 +17,37 @@ const KanbanContainer = () => {
   })
 
   const onDragEnd = (result) => {
-    //TODO Make on drag end logic
+
+    const {draggableId, source, destination} = result
+
+    if (!destination) {
+      return
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return
+    }
+
+    const column = state.columns[source.droppableId]
+    const newArrayIds = column.taskIds.slice()
+    newArrayIds.splice(source.index, 1)
+    newArrayIds.splice(destination.index, 0, draggableId)
+
+    const newColumn = {
+      ...column,
+      taskIds: newArrayIds
+    }
+
+    setState({
+      ...state,
+      columns: {
+        ...state.columns,
+        [column.id]: newColumn
+      }
+    })
   }
 
   return (
