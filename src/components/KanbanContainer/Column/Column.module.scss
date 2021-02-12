@@ -2,11 +2,23 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  margin-right: 30px;
   border-radius: 3px;
   border: 3px double black;
-  width: 400px;
+  min-width: 300px;
+  //background: skyblue;
+  transition: background-color 0.5s ease;
 
   h3 {
     margin-left: 5px;
+  }
+
+  &.isDraggingOver {
+    background-color: skyblue;
+  }
+
+  > div {
+    flex-grow: 1;
   }
 }

@@ -1,0 +1,27 @@
+
+
+.task {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  height: 50px;
+  transition: background-color 0.5s ease;
+
+
+  &.isDragging {
+    background-color: darkseagreen;
+  }
+
+  .handle {
+    width: 25px;
+    height: 25px;
+    background-color: cornflowerblue;
+    border-radius: 7px;
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+}
